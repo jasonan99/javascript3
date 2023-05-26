@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/home.css">
+  <title>Home - Dad Jokes</title>
+</head>
+<body>
+  <main>
+    <section class="dad">
+      <img class="dad-image" src="./images/dad.jpeg" alt="">
+      <div class="dad-container">
+        <div class="dad-container--text" id="joke">Click the button to get a joke!</div>
+        <button id="generate">Get a joke</button>
+      </div>
+      <div class="dad-container">
+        <div class="dad-container--search">
+          <input id="searchbar" placeholder="Search a joke!"></input>
+          <button id="search">Search</button>
+        </div>
+        <div id="jokes"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
