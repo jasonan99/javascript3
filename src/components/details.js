@@ -17,6 +17,7 @@ function handleProductChange(product) {
   title.innerHTML = `${state.color} ${product} with joke`;
   price.innerHTML = `${prices[product][state.color]}`;
   state.product = product;
+  console.log(title.product);
 }
 
 function handleColorChange(color) {

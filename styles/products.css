@@ -1,6 +1,6 @@
 body {
   max-width: 1400px;
-  margin: 0 auto 200px;
+  margin: 0 auto 50px;
 }
 
 a {
@@ -19,6 +19,7 @@ h1::first-letter {
 
 .product-wrap {
   width: 65%;
+  margin-bottom: 50px;
 }
 
 .product-details {
@@ -52,10 +53,11 @@ h1::first-letter {
 .other-products__wrapper {
   display: flex;
   justify-content: space-between;
+  margin-top: 25px;
 }
 
 .other-products__btn {
-  width: 24%;
+  width: 30%;
   height: 25%;
   height: 350px;
   border: 1px solid;
