@@ -18,7 +18,6 @@
     <section class="product-details">
       <h1 id="title">White shirt with joke</h1>
       <p id="price">$20</p>
-      <p id="selected-joke"></p>
       <div>
         <div>
           <input data-id="white" class="color" type="radio" name="color" checked>
@@ -27,6 +26,10 @@
         <div>
           <input data-id="black" class="color" type="radio" name="color">
           <label for="black">Black</label>
+        </div>
+        <div class="joke-container">
+          <div class="joke-text" id="joke"></div>
+          <button class="joke-btn" id="generate">Get a joke</button>
         </div>
       </div>
     </section>

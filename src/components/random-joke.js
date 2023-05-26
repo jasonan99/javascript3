@@ -2,11 +2,18 @@ import { generateRandomJoke } from "./jokes-api.js";
 
 const randomJoke = ({id, joke}) => {
   const seejoke = document.getElementById('joke');
-  seejoke.innerHTML = ''
+  const mjoke = document.getElementById('main-joke');
+  seejoke.innerHTML = '';
   seejoke.insertAdjacentHTML(
     "beforeend",
     `<a href="./html/products.html?id=${id}">${joke}</a>`
-  )
+  );
+  
+  mjoke.innerHTML = '';
+  mjoke.insertAdjacentHTML(
+    "beforeend",
+    `${joke}</p>`
+  );
 };
 
 const showJoke = () => {
