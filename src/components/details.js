@@ -5,7 +5,7 @@ import { selectedJoke } from './jokes-api.js';
 
 const title = document.getElementById('title');
 const price = document.getElementById('price');
-const joke = document.getElementById('joke');
+const joke = document.getElementById('selected-joke');
 const mjoke = document.getElementById('main-joke');
 
 let state = {
@@ -28,7 +28,7 @@ function handleColorChange(color) {
 const getJoke = async () => {
   const id = new URLSearchParams(window.location.search).get("id");
   let result = await selectedJoke(id);
-  joke.innerHTML = `${result}`;
+  joke.innerHTML = `Joke: ${result}`;
   mjoke.innerHTML = `${result}`;
 };
 await getJoke();

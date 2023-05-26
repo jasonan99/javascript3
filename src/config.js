@@ -1,15 +1,15 @@
 const prices = {
   shirt: {
     white: '$10',
-    black: '$15',
+    black: '$13',
   },
   pillow: {
-    white: '$17',
-    black: '$20',
+    white: '$12',
+    black: '$15',
   },
   case: {
-    white: '$6',
-    black: '$8',
+    white: '$5',
+    black: '$7',
   },
   poster: {
     white: '$3',

@@ -6,13 +6,7 @@ const randomJoke = ({id, joke}) => {
   seejoke.innerHTML = '';
   seejoke.insertAdjacentHTML(
     "beforeend",
-    `<a href="./html/products.html?id=${id}">${joke}</a>`
-  );
-  
-  mjoke.innerHTML = '';
-  mjoke.insertAdjacentHTML(
-    "beforeend",
-    `${joke}</p>`
+    `<a href="../../html/products.html?id=${id}">${joke}</a>`
   );
 };
 
