@@ -2,22 +2,18 @@ import { productChange } from './other-products.js';
 import prices from '../config.js';
 import { colorChange } from './colors.js';
 import { selectedJoke } from './jokes-api.js';
+import { selected } from '../config.js';
 
 const title = document.getElementById('title');
 const price = document.getElementById('price');
 const joke = document.getElementById('selected-joke');
 const mjoke = document.getElementById('main-joke');
-
-let state = {
-  color: 'white',
-  product: 'shirt'
-}; 
+let state = selected;
 
 function handleProductChange(product) {
   title.innerHTML = `${state.color} ${product} with joke`;
   price.innerHTML = `${prices[product][state.color]}`;
   state.product = product;
-  console.log(title.product);
 }
 
 function handleColorChange(color) {

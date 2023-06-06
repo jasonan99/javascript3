@@ -1,6 +1,7 @@
 body {
   max-width: 1400px;
   margin: 0 auto 50px;
+  position: relative;
 }
 
 a {
@@ -8,7 +9,8 @@ a {
   color: black;
 }
 
-h1::first-letter {
+h1::first-letter,
+h3::first-letter {
   text-transform: capitalize;
 }
 
@@ -91,4 +93,37 @@ h1::first-letter {
   font-weight: bold;
   cursor: pointer;
   display: flex;
+}
+
+.cart {
+  width: 20%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  height: 100%;
+  border-left: 3px solid;
+  padding: 0 30px;
+  display: none;
+}
+
+.cart-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product {
+  display: flex;
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 49%;
+  max-height: 150px;
+  border-radius: 5px;
+  margin-right: 5px;
 }

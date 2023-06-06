@@ -1,31 +1,33 @@
 import config from '../config.js';
 import Publisher from '../Publisher.js';
+import { selected } from '../config.js';
+
 const wrap = document.getElementById('other-products-wrap');
-const img = document.getElementById('main-img');
+let state=selected;
 
 const productChange = new Publisher();
 
 function handleProductChange(event) {
   productChange.publish(event.currentTarget.dataset.productid);
-  initProducts();
+  state = selected;
 }
 
 function initProducts() {
   const products = Object.keys(config);
+  const filteredProducts = products.filter((product) => product !== state.product);
+
   wrap.innerHTML = '';
-  products.forEach((prod) => {
+  filteredProducts.forEach((prod) => {
     const btn = document.createElement('button');
     btn.classList.add('other-products__btn');
     btn.dataset.productid = prod;
     btn.addEventListener('click', handleProductChange);
-    img.src !== `http://127.0.0.1:5500/images/product-${prod}-white.jpg`
-    ? (btn.innerHTML = `<img src="../images/product-${prod}-white.jpg" alt="">`)
-    : (btn.style.display = 'none');
+    btn.innerHTML = `<img src="../images/product-${prod}-white.jpg" alt="">`;
     wrap.appendChild(btn);
   });
 }
 
 export {
   initProducts,
-  productChange,
+  productChange
 };

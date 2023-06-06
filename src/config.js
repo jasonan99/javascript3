@@ -17,4 +17,10 @@ const prices = {
   }
 };
 
+const selected = {
+  color: 'white',
+  product: 'shirt'
+};
+
 export default prices;
+export { selected };

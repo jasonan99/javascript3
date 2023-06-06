@@ -8,17 +8,21 @@
   <link rel="stylesheet" href="../styles/products.css">
 </head>
 <body>
+  <header>
+    <button id="cart-btn">Cart</button>
+  </header>
   <main class="main">
     <section class="product-wrap">
       <div class="visualizer">
-        <img id="main-img" class="visualizer__img" src="../images/product-shirt-white.jpg" />
+        <img id="main-img" class="visualizer__img" src="" />
         <p id="main-joke" class="visualizer__joke"></p>
       </div>
     </section>
     <section class="product-details">
-      <h1 id="title">White shirt with joke</h1>
-      <p id="price">$20</p>
+      <h1 id="title"></h1>
+      <p id="price"></p>
       <p id="selected-joke"></p>
+      <button id="add-to-cart">Add to cart</button>
       <div>
         <div>
           <input data-id="white" class="color" type="radio" name="color" checked>
@@ -38,6 +42,14 @@
   <section class="other-products">
     <h2>Choose another product</h2>
     <div id="other-products-wrap" class="other-products__wrapper"></div>
+  </section>
+  <section id="cart" class="cart">
+    <div class="cart-wrap">
+      <h2>Cart</h2>
+      <button id="close">Close</button>
+      <button id="remove-all">Remove all</button>
+      <div id="product"></div>
+    </div>
   </section>
   <script type="module" src="../src/app.js"></script>
 </body>
