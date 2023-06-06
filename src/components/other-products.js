@@ -3,13 +3,13 @@ import Publisher from '../Publisher.js';
 import { selected } from '../config.js';
 
 const wrap = document.getElementById('other-products-wrap');
-let state=selected;
+let state = selected;
 
 const productChange = new Publisher();
 
 function handleProductChange(event) {
   productChange.publish(event.currentTarget.dataset.productid);
-  state = selected;
+  initProducts();
 }
 
 function initProducts() {
