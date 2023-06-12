@@ -4,24 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/home.css">
-  <title>Home - Dad Jokes</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Home - Events Site</title>
 </head>
 <body>
   <main>
-    <section class="dad">
-      <img class="dad-image" src="./images/dad.jpeg" alt="">
-      <div class="dad-container">
-        <div class="dad-container--text" id="joke">Click the button to get a joke!</div>
-        <button id="generate">Get a joke</button>
-      </div>
-      <div class="dad-container">
-        <div class="dad-container--search">
-          <input id="searchbar" placeholder="Search a joke!"></input>
-          <button id="search">Search</button>
+    <section id="tab" class="categories">
+      <button>Music</button>
+      <button>Sports</button>
+      <button>Business</button>
+      <button>Food</button>
+      <button>Art</button>
+    </section>
+    <section id="content" class="events">
+      <div class="events-card">
+        <img src="https://www.nationalgeographic.com.es/medio/2023/01/12/imagen-de-un-atomo_952cc086_230112124807_1280x988.jpg" alt="">
+        <div class="events-card_info">
+          <h2>titulo</h2>
+          <p>fecha</p>
+          <p>location</p>
+          <p>precio</p>
         </div>
-        <div id="jokes"></div>
-      </div>
     </section>
   </main>
   <script type="module" src="./src/main.js"></script>
