@@ -1,3 +1,6 @@
-import { createEventParagraphs } from "./components/colors.js";
+import eventCache from "./components/cache.js";
+import { selectedCategory } from "./components/categories.js";
 
-createEventParagraphs();
+selectedCategory();
+
+console.log(eventCache)
