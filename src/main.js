@@ -1,6 +1,5 @@
-import eventCache from "./components/cache.js";
 import { selectedCategory } from "./components/categories.js";
+import { createEvent } from "./components/events.js";
 
 selectedCategory();
-
-console.log(eventCache)
+createEvent();
