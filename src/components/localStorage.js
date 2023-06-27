@@ -14,4 +14,9 @@ function saveEvent(eventType, eventId) {
   localStorage.setItem(eventType, JSON.stringify(events));
 }
 
-export { saveEvent }
+function getEvent(eventType, eventId) {
+  const events = JSON.parse(localStorage.getItem(eventType)) || [];
+  return events.find((event) => event.id === eventId);
+}
+
+export { saveEvent, getEvent };
