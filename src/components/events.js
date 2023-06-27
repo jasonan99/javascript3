@@ -1,4 +1,5 @@
 import { saveEvent } from "./localStorage.js";
+import { formatDate } from "./calendar.js";
 
 function generateUniqueId() {
   return Date.now().toString();
@@ -17,9 +18,10 @@ const createEvent = (event) => {
   const date = new Date(event.date);
   const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
   const formattedDate = date.toLocaleDateString('en-US', options);
+  const formattedDates = formatDate(date);
 
   const eventHtml = `
-    <div class="events-card" id="${eventId}">
+  <div class="events-card" id="${eventId}" data-event-date="${formattedDates}">
       <img class="events-card_img" src="${event.image}" alt="">
       <button class="favorites" data-event-id="${eventId}" data-event-type="favorites"></button>
       <div class="events-card_info">

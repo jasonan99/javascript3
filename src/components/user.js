@@ -1,5 +1,9 @@
+import { calendar } from "./calendar.js";
+
+const eventsContainer = document.getElementById('user-content');
+const calendarContainer = document.getElementById('calendar-container');
+
 function showEvents(category) {
-  const eventsContainer = document.getElementById('user-content');
   eventsContainer.innerHTML = '';
 
   const events = JSON.parse(localStorage.getItem(category)) || [];
@@ -9,11 +13,19 @@ function showEvents(category) {
   });
 }
 
-const categoryButtons = document.querySelectorAll('.category');
-categoryButtons.forEach(button => {
+  const categoryButtons = document.querySelectorAll('.category');
+  categoryButtons.forEach(button => {
   button.addEventListener('click', () => {
     const category = button.textContent.toLowerCase();
-    showEvents(category);
+    if(category !== 'calendar') {
+      calendarContainer.style.display = 'none';
+      showEvents(category);
+    }
+    else {
+      eventsContainer.innerHTML = '';
+      calendarContainer.style.display = 'block';
+      calendar();
+    }
   });
 });
 
