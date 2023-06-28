@@ -87,7 +87,7 @@ function generateCalendar(month, year) {
             cell.appendChild(button);
           }
         } else if (hasGoing) {
-          cell.style.backgroundColor = 'green';
+          cell.style.backgroundColor = 'lightgreen';
           const eventInfo = getEventInfo(eventsDate);
           if (eventInfo) {
             const eventName = eventInfo.title;
@@ -124,6 +124,20 @@ function generateCalendar(month, year) {
   currentMonthYear.textContent = months[month] + ' ' + year;
 
   highlightEventDates(month, year);
+  assignButtonEvents();
+}
+
+function assignButtonEvents() {
+  const calendarDays = calendarContainer.querySelectorAll('tbody td');
+
+  calendarDays.forEach((day) => {
+    day.addEventListener('click', () => {
+      const eventId = day.querySelector('button[data-event-date]')?.getAttribute('data-event-date');
+      if (eventId) {
+        showEventCard(eventId);
+      }
+    });
+  });
 }
 
 function highlightEventDates(month, year) {
@@ -180,12 +194,58 @@ function getEventInfo(eventDate) {
 
       if (eventNameElement) {
         const eventName = eventNameElement.textContent;
-        return { title: eventName };
+        return { title: eventName, html: event.html };
       }
     }
   }
 
   return null;
+}
+
+function showEventCard(eventId) {
+  const eventInfo = getEventInfo(eventId);
+
+  if (eventInfo) {
+    const eventCardContainer = document.getElementById("eventCardContainer");
+    eventCardContainer.innerHTML = eventInfo.html;
+
+    const buttons = eventCardContainer.querySelectorAll('.btn');
+    buttons.forEach((button) => {
+      button.style.display = 'none';
+    });
+
+    const anchors = eventCardContainer.querySelectorAll('a');
+    anchors.forEach((anchor) => {
+      anchor.style.display = 'none';
+    });
+
+    const favorites = eventCardContainer.querySelectorAll('.favorites');
+    favorites.forEach((favorite) => {
+      favorite.style.display = 'none';
+    });
+
+    const clickedButton = document.querySelector(`button[data-event-date="${eventId}"]`);
+    const buttonRect = clickedButton.getBoundingClientRect();
+    
+    eventCardContainer.style.display = 'block';
+    eventCardContainer.style.top = `${buttonRect.top}px`;
+    eventCardContainer.style.left = `${buttonRect.right}px`;
+
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = 'block';
+
+    overlay.addEventListener("click", hideEventCard);
+  }
+}
+
+function hideEventCard() {
+  const eventCardContainer = document.getElementById("eventCardContainer");
+  const overlay = document.getElementById("overlay");
+
+  eventCardContainer.style.display = "none";
+  overlay.style.display = "none";
+
+  overlay.removeEventListener("click", hideEventCard);
 }
 
 function calendar() {
@@ -204,16 +264,6 @@ function calendar() {
     currentDate.setMonth(currentDate.getMonth() + 1);
     generateCalendar(currentDate.getMonth(), currentDate.getFullYear());
   });
-
-
-  function showEventCard(eventId) {
-    const eventInfo = getEventInfo(eventId);
-  
-    if (eventInfo) {
-      const eventCardContainer = document.getElementById("eventCardContainer");
-      eventCardContainer.innerHTML = eventInfo.html;
-    }
-  }
   
   const calendarDays = calendarContainer.querySelectorAll('tbody td');
   

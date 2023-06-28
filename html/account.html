@@ -21,14 +21,15 @@
     <section id="user-content" class="events"></section>
     <section class="calendar" id="calendar-container">
       <div class="calendar-buttons">
-        <button id="prevBtn">Anterior</button>
+        <button class="prev-btn" id="prevBtn"><span class="visually-hidden">Anterior</span></button>
         <h2 class="calendar-tittle" id="currentMonthYear"></h1>
-        <button id="nextBtn">Siguiente</button>
+        <button class="next-btn" id="nextBtn"><span class="visually-hidden">Siguiente</span></button>
       </div>
       <div class="calendar-info" id="calendar"></div>
     </section>
-    <div id="eventCardContainer"></div>
+    <div class="event-card" id="eventCardContainer"></div>
   </main>
+  <div class="overlay" id="overlay"></div>
   <script type="module" src="../src/account.js"></script>
 </body>
 </html>
