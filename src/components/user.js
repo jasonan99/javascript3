@@ -1,4 +1,4 @@
-import { calendar } from "./calendar.js";
+import { calendar } from './calendar.js';
 
 const eventsContainer = document.getElementById('user-content');
 const calendarContainer = document.getElementById('calendar-container');

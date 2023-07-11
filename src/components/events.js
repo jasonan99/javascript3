@@ -1,5 +1,5 @@
-import { saveEvent } from "./localStorage.js";
-import { formatDate } from "./calendar.js";
+import { saveEvent } from './localStorage.js';
+import { formatDate } from './calendar.js';
 
 function generateUniqueId() {
   return Date.now().toString();

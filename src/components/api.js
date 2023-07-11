@@ -18,7 +18,7 @@ const getEvents = async (category) => {
 
     const data = await response.json();
     eventCache[category] = data;
-
+    
     displayEvents(data);
   }
 };

@@ -228,8 +228,7 @@ function showEventCard(eventId) {
     const buttonRect = clickedButton.getBoundingClientRect();
     
     eventCardContainer.style.display = 'block';
-    eventCardContainer.style.top = `${buttonRect.top}px`;
-    eventCardContainer.style.left = `${buttonRect.right}px`;
+    eventCardContainer.classList.add('calendar-card');
 
     const overlay = document.getElementById("overlay");
     overlay.style.display = 'block';
