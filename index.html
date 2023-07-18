@@ -2,28 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/home.css">
-  <title>Home - Dad Jokes</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Home - Plants</title>
 </head>
 <body>
   <main>
-    <section class="dad">
-      <img class="dad-image" src="./images/dad.jpeg" alt="">
-      <div class="dad-container">
-        <div class="dad-container--text" id="joke">Click the button to get a joke!</div>
-        <button id="generate">Get a joke</button>
-      </div>
-      <div class="dad-container">
-        <div class="dad-container--search">
-          <input id="searchbar" placeholder="Search a joke!"></input>
-          <button id="search">Search</button>
-        </div>
-        <div id="jokes"></div>
-      </div>
+    <h1>Let us find the perfect plant for you</h1>
+    <form id="form">
+      <p>Where will you place your plant?</p>
+      <label><input type="radio" name="placement" value="low" required> Inside with some indirect light</label>
+      <label><input type="radio" name="placement" value="medium" required> Inside with a lot of indirect light</label>
+      <label><input type="radio" name="placement" value="outdoor" required> Outside</label>
+    
+      <p>Will it receive direct sunlight?</p>
+      <label><input type="radio" name="sunlight" value="yes" required> Yes</label>
+      <label><input type="radio" name="sunlight" value="no" required> No</label>
+    
+      <p>Do you have pets (cats or dogs)?</p>
+      <label><input type="radio" name="pets" value="notoxic" required> Yes</label>
+      <label><input type="radio" name="pets" value="toxic" required> No</label>
+    
+      <p>Do you tend to overwater or underwater?</p>
+      <label><input type="radio" name="watering" value="overwater" required> Overwater</label>
+      <label><input type="radio" name="watering" value="underwater" required> Underwater</label>
+      <label><input type="radio" name="watering" value="neither" required> Neither / I don't know</label>
+    
+      <p>How do you define your style?</p>
+      <label><input type="radio" name="style" value="minimalism" required> I like minimalism and material colors</label>
+      <label><input type="radio" name="style" value="simple" required> I like some decoration and simple colors</label>
+      <label><input type="radio" name="style" value="decoration" required> I like a lot of decoration and bright colors</label>
+    
+      <p>Do you want to add any extra elements to your plant?</p>
+      <label><input type="checkbox" name="extras" value="moss-pole"> Moss pole</label>
+      <label><input type="checkbox" name="extras" value="pebbles"> Pebbles</label>
+      <label><input type="checkbox" name="extras" value="smaller-plants"> Smaller plants</label>
+    
+      <button type="submit">Get your plant!</button>
+      <button type="reset">Clear</button>
+    </form>
+
+    <section>
+      <div id="title"></div>
+      <div id="image"></div>    
+      <div id="info"></div>
     </section>
   </main>
-  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

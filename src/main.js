@@ -1,5 +1,3 @@
-import showJoke from './components/random-joke.js';
-import showResults from './components/search-joke.js';
+import showCard from "./components/card.js";
 
-showJoke();
-showResults();
+showCard();
