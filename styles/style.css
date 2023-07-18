@@ -6,6 +6,7 @@ img {
   height: 300px;
   width: 300px;
   position: absolute;
+  left: -25%;
 }
 
 p {
@@ -20,7 +21,7 @@ label {
 }
 
 button {
-  margin-top: 25px;
+  margin: 25px 0;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid mediumslateblue;
@@ -50,10 +51,15 @@ input[type="checkbox"] {
 }
 
 .info {
+  left: 10%;
   position: absolute;
-  top: 300px;
+  top: 450px;
+  text-align: center;
 }
 
 .card {
-  margin-top: 200px;
+  margin-top: 25px;
+  text-align: center;
+  position: absolute;
+  left: 60%;
 }
