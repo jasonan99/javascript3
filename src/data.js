@@ -1,42 +1,42 @@
 const plants = {
   low: {
     toxic: {
-      underwater: 'Sansevieria',
-      overwater: 'Peace Lily',
-      neither: 'Sansevieria'
+      underwater: "Sansevieria",
+      overwater: "Peace Lily",
+      neither: "Sansevieria",
     },
     notoxic: {
-      underwater: 'Boston Fern',
-      overwater: 'Boston Fern',
-      neither: 'Boston Fern'
-    }
+      underwater: "Boston Fern",
+      overwater: "Boston Fern",
+      neither: "Boston Fern",
+    },
   },
 
   medium: {
     toxic: {
-      underwater: 'Aglaonema',
-      overwater: 'Peace Lily',
-      neither: 'Aglaonema'
+      underwater: "Aglaonema",
+      overwater: "Peace Lily",
+      neither: "Aglaonema",
     },
     notoxic: {
-      underwater: 'Monstera',
-      overwater: 'Peace Lily',
-      neither: 'Monstera'
-    }
+      underwater: "Monstera",
+      overwater: "Peace Lily",
+      neither: "Monstera",
+    },
   },
 
   outdoor: {
     toxic: {
-      underwater: 'Aloe Vera',
-      overwater: 'Aloe Vera',
-      neither: 'Aloe Vera'
+      underwater: "Aloe Vera",
+      overwater: "Aloe Vera",
+      neither: "Aloe Vera",
     },
     notoxic: {
-      underwater: 'Cactus',
-      overwater: 'Cactus',
-      neither: 'Cactus'
-    }
-  }
-}
+      underwater: "Cactus",
+      overwater: "Cactus",
+      neither: "Cactus",
+    },
+  },
+};
 
 export default plants;

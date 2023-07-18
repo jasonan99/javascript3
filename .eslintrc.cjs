@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
+  ignorePatterns: ["dist/"],
   rules: {
     "import/extensions": [2, "always"],
   },
