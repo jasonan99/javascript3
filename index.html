@@ -10,8 +10,8 @@
 
 <body>
   <main>
-    <section class="wrapper">
-      <div class="form">
+    <section class="plant-form">
+      <div class="form"  id="plant-form">
         <h1>Let us find the perfect plant for you</h1>
         <form id="form">
           <p>Where will you place your plant?</p>
@@ -51,14 +51,11 @@
             like a lot of decoration and bright colors</label>
 
           <p>Do you want to add any extra elements to your plant?</p>
-          <label><input type="checkbox" name="extras" value="moss-pole" /> Moss
-            pole</label>
-          <label><input type="checkbox" name="extras" value="pebbles" />
-            Pebbles</label>
-          <label><input type="checkbox" name="extras" value="smaller-plants" />
-            Smaller plants</label>
+          <label><input type="checkbox" name="extras" value="moss-pole" /> Moss pole</label>
+          <label><input type="checkbox" name="extras" value="pebbles" /> Pebbles</label>
+          <label><input type="checkbox" name="extras" value="smaller-plants" /> Smaller plants</label>
 
-          <button type="submit">Get your plant!</button>
+          <button id="get-plant">Get your plant!</button>
           <button type="reset">Clear</button>
         </form>
       </div>
@@ -66,6 +63,80 @@
         <div id="title"></div>
         <div id="image"></div>
         <div class="info" id="info"></div>
+      </div>
+    </section>
+    <section>
+      <div class="form">
+        <h2>Customize your plant!</h2>
+        <form>
+          <p>Choose your pot:</p>
+          <label>
+              <input type="radio" name="material" value="Clay" class="material">Clay
+          </label>
+          <label>
+              <input type="radio" name="material" value="Ceramic" class="material">Ceramic
+          </label>
+  
+          <p>Pot decorations:</p>
+          <label>
+              <input type="radio" name="pot" value="pot with decorations" class="pot">Yes
+          </label>
+          <label>
+              <input type="radio" name="pot" value="pot" class="pot">No
+          </label>
+  
+          <p>Pot color:</p>
+          <label>
+              <input type="checkbox" name="color" value="Yes">Yes
+          </label>
+          <label>
+            <input type="checkbox" name="color" value="Unpainted" class="color">No
+        </label>
+  
+          <div>
+              <label>
+                  <input type="radio" name="color" value="Blue" class="color">Blue
+              </label>
+              <label>
+                  <input type="radio" name="color" value="Pink" class="color">Pink
+              </label>
+              <label>
+                  <input type="radio" name="color" value="Green" class="color">Green
+              </label>
+              <label>
+                  <input type="radio" name="color" value="Purple" class="color">Purple
+              </label>
+          </div>
+  
+          <p>Choose your plant:</p>
+          <select name="plant" data-key="plant">
+            <option value=""></option>
+            <option value="Aglaonema">Aglaonema Silver Bay</option>
+            <option value="Aloe Vera">Aloe Vera</option>
+            <option value="Boston Fern">Boston Fern</option>
+            <option value="Cactus">Cactus</option>
+            <option value="Monstera">Monstera Deliciosa</option>
+            <option value="Peace Lily">Peace Lily</option>
+            <option value="Sansevieria">Sansevieria</option>
+          </select>
+  
+          <p>Choose your soil:</p>
+          <label>
+              <input type="radio" name="soil" value="Composted soil" class="soil">Basic composted soil
+          </label>
+          <label>
+              <input type="radio" name="soil" value="Fertilized soil" class="soil">Premium fertilized soil
+          </label>
+          <label>
+              <input type="radio" name="soil" value="Easy drainage soil" class="soil">Easy drainage soil
+          </label>
+  
+          <p>Choose your extras:</p>
+          <label><input type="checkbox" name="extras" value="moss-pole"> Moss pole</label>
+          <label><input type="checkbox" name="extras" value="pebbles"> Pebbles</label>
+          <label><input type="checkbox" name="extras" value="smaller-plants"> Smaller plants</label>
+      
+      </form>
       </div>
     </section>
   </main>

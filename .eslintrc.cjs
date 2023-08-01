@@ -22,5 +22,8 @@ module.exports = {
   ignorePatterns: ["dist/"],
   rules: {
     "import/extensions": [2, "always"],
+    "import/no-mutable-exports": ["off"],
+    "import/no-cycle": ["off"],
+    "no-param-reassign": ["off"]
   },
 };

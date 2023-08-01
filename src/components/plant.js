@@ -1,77 +1,48 @@
-import builder from "./builder.js";
-import plants from "../data.js";
+import { hide, updateCustomizeForm } from "./visualizer.js";
+import getInfo from "./form.js";
+import {generateImages, generateInfo} from "./generate.js";
 
-const data = {};
+const form = document.getElementById("form");
+const title = document.getElementById("title");
+const image = document.getElementById("image");
+const info = document.getElementById("info");
 
-function getInfo(placement, sunlight, pets, watering, style, extras) {
-  const selectedPlant = plants[placement][pets][watering];
+let data = {};
 
-  let pot;
+function showPlant() {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  if (style === "minimalism") {
-    pot = "pot";
-  } else if (style === "simple") {
-    pot = "pot with decorations";
-  } else {
-    pot = "painted pot with decorations";
-  }
+    const placement = form.querySelector(
+      'input[name="placement"]:checked',
+    ).value;
+    const sunlight = form.querySelector('input[name="sunlight"]:checked').value;
+    const pets = form.querySelector('input[name="pets"]:checked').value;
+    const watering = form.querySelector('input[name="watering"]:checked').value;
+    const style = form.querySelector('input[name="style"]:checked').value;
+    const extras = Array.from(
+      form.querySelectorAll('input[name="extras"]:checked'),
+    ).map((input) => input.value);
 
-  builder
-    .setPlant(selectedPlant)
-    .setSoil(sunlight === "yes" ? "Composted soil" : "Fertilized soil")
-    .setPot(pot);
+    data = getInfo(placement, sunlight, pets, watering, style, extras);
 
-  const plantBuilder = builder.setPlant(selectedPlant);
+    title.innerHTML = `
+      <p>The perfect plant for you is...</p>
+      <h2>${data.plant}!</h2>
+    `;
 
-  if (watering === "overwater") {
-    plantBuilder.setSoil("Easy drainage soil").setMaterial("Clay");
-  } else {
-    plantBuilder
-      .setSoil(sunlight === "yes" ? "Composted soil" : "Fertilized soil")
-      .setMaterial("Ceramic");
-  }
+    const imagesHTML = generateImages(data);
+    image.innerHTML = imagesHTML;
 
-  if (style === "decoration") {
-    if (plantBuilder.material === "Clay") {
-      plantBuilder.setColor("Blue");
-    } else if (plantBuilder.material === "Ceramic") {
-      plantBuilder.setColor("Pink");
-    }
-  } else if (
-    (style === "minimalism" || style === "simple") &&
-    plantBuilder.material === "Clay"
-  ) {
-    plantBuilder.setColor(plantBuilder.material);
-  } else {
-    plantBuilder.setColor("Yellow");
-  }
+    const infoHTML = generateInfo(data);
+    info.innerHTML = infoHTML;
 
-  if (extras.includes("moss-pole")) {
-    plantBuilder.withPole("Moss pole");
-  }
-  if (extras.includes("pebbles")) {
-    plantBuilder.withPebbles("Pebbles");
-  }
-  if (extras.includes("smaller-plants")) {
-    plantBuilder.withPlants("Mini Plants");
-  }
+    info.innerHTML += `<button id="customize">Customize!</button>`;
 
-  data.plant = plantBuilder.plant;
-  data.soil = plantBuilder.soil;
-  data.pot = `${plantBuilder.material} ${plantBuilder.pot}`;
-  data.color = plantBuilder.color;
+    hide();
 
-  if (plantBuilder.includePole) {
-    data.pole = plantBuilder.pole;
-  }
-  if (plantBuilder.includePlants) {
-    data.plants = plantBuilder.plants;
-  }
-  if (plantBuilder.includePebbles) {
-    data.pebbles = plantBuilder.pebbles;
-  }
-
-  return data;
+    updateCustomizeForm();
+  });
 }
 
-export default getInfo;
+export { showPlant, data } ;
