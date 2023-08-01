@@ -84,10 +84,12 @@ function initVisualizer() {
 function hide() {
   const customizeButton = document.getElementById("customize");
   const plantForm = document.getElementById("plant-form");
+  const customizeForm = document.getElementById("customize-form");
 
   function hidePlantForm() {
     plantForm.classList.add("hidden");
     customizeButton.classList.add("hidden");
+    customizeForm.classList.remove("hidden");
   }
 
   customizeButton.addEventListener("click", hidePlantForm);

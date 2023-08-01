@@ -15,40 +15,27 @@
         <h1>Let us find the perfect plant for you</h1>
         <form id="form">
           <p>Where will you place your plant?</p>
-          <label><input type="radio" name="placement" value="low" required />
-            Inside with some indirect light</label>
-          <label><input type="radio" name="placement" value="medium" required />
-            Inside with a lot of indirect light</label>
-          <label><input type="radio" name="placement" value="outdoor" required />
-            Outside</label>
+          <label><input type="radio" name="placement" value="low" required />Inside with some indirect light</label>
+          <label><input type="radio" name="placement" value="medium" required />Inside with a lot of indirect light</label>
+          <label><input type="radio" name="placement" value="outdoor" required />Outside</label>
 
           <p>Will it receive direct sunlight?</p>
-          <label><input type="radio" name="sunlight" value="yes" required />
-            Yes</label>
-          <label><input type="radio" name="sunlight" value="no" required />
-            No</label>
+          <label><input type="radio" name="sunlight" value="yes" required />Yes</label>
+          <label><input type="radio" name="sunlight" value="no" required />No</label>
 
           <p>Do you have pets (cats or dogs)?</p>
-          <label><input type="radio" name="pets" value="notoxic" required />
-            Yes</label>
-          <label><input type="radio" name="pets" value="toxic" required />
-            No</label>
+          <label><input type="radio" name="pets" value="notoxic" required />Yes</label>
+          <label><input type="radio" name="pets" value="toxic" required />No</label>
 
           <p>Do you tend to overwater or underwater?</p>
-          <label><input type="radio" name="watering" value="overwater" required />
-            Overwater</label>
-          <label><input type="radio" name="watering" value="underwater" required />
-            Underwater</label>
-          <label><input type="radio" name="watering" value="neither" required />
-            Neither / I don't know</label>
+          <label><input type="radio" name="watering" value="overwater" required />Overwater</label>
+          <label><input type="radio" name="watering" value="underwater" required />Underwater</label>
+          <label><input type="radio" name="watering" value="neither" required />Neither / I don't know</label>
 
           <p>How do you define your style?</p>
-          <label><input type="radio" name="style" value="minimalism" required /> I
-            like minimalism and material colors</label>
-          <label><input type="radio" name="style" value="simple" required /> I
-            like some decoration and simple colors</label>
-          <label><input type="radio" name="style" value="decoration" required /> I
-            like a lot of decoration and bright colors</label>
+          <label><input type="radio" name="style" value="minimalism" required /> I like minimalism and material colors</label>
+          <label><input type="radio" name="style" value="simple" required /> I like some decoration and simple colors</label>
+          <label><input type="radio" name="style" value="decoration" required /> I like a lot of decoration and bright colors</label>
 
           <p>Do you want to add any extra elements to your plant?</p>
           <label><input type="checkbox" name="extras" value="moss-pole" /> Moss pole</label>
@@ -66,46 +53,26 @@
       </div>
     </section>
     <section>
-      <div class="form">
+      <div class="form hidden" id="customize-form">
         <h2>Customize your plant!</h2>
         <form>
           <p>Choose your pot:</p>
-          <label>
-              <input type="radio" name="material" value="Clay" class="material">Clay
-          </label>
-          <label>
-              <input type="radio" name="material" value="Ceramic" class="material">Ceramic
-          </label>
+          <label><input type="radio" name="material" value="Clay" class="material">Clay</label>
+          <label><input type="radio" name="material" value="Ceramic" class="material">Ceramic</label>
   
           <p>Pot decorations:</p>
-          <label>
-              <input type="radio" name="pot" value="pot with decorations" class="pot">Yes
-          </label>
-          <label>
-              <input type="radio" name="pot" value="pot" class="pot">No
-          </label>
+          <label><input type="radio" name="pot" value="pot with decorations" class="pot">Yes</label>
+          <label><input type="radio" name="pot" value="pot" class="pot">No</label>
   
           <p>Pot color:</p>
-          <label>
-              <input type="checkbox" name="color" value="Yes">Yes
-          </label>
-          <label>
-            <input type="checkbox" name="color" value="Unpainted" class="color">No
-        </label>
+          <label><input type="checkbox" name="color" value="Yes">Yes</label>
+          <label><input type="checkbox" name="color" value="Unpainted" class="color">No</label>
   
           <div>
-              <label>
-                  <input type="radio" name="color" value="Blue" class="color">Blue
-              </label>
-              <label>
-                  <input type="radio" name="color" value="Pink" class="color">Pink
-              </label>
-              <label>
-                  <input type="radio" name="color" value="Green" class="color">Green
-              </label>
-              <label>
-                  <input type="radio" name="color" value="Purple" class="color">Purple
-              </label>
+              <label><input type="radio" name="color" value="Blue" class="color">Blue</label>
+              <label><input type="radio" name="color" value="Pink" class="color">Pink</label>
+              <label><input type="radio" name="color" value="Green" class="color">Green</label>
+              <label><input type="radio" name="color" value="Purple" class="color">Purple</label>
           </div>
   
           <p>Choose your plant:</p>
@@ -121,21 +88,14 @@
           </select>
   
           <p>Choose your soil:</p>
-          <label>
-              <input type="radio" name="soil" value="Composted soil" class="soil">Basic composted soil
-          </label>
-          <label>
-              <input type="radio" name="soil" value="Fertilized soil" class="soil">Premium fertilized soil
-          </label>
-          <label>
-              <input type="radio" name="soil" value="Easy drainage soil" class="soil">Easy drainage soil
-          </label>
+          <label><input type="radio" name="soil" value="Composted soil" class="soil">Basic composted soil</label>
+          <label><input type="radio" name="soil" value="Fertilized soil" class="soil">Premium fertilized soil</label>
+          <label><input type="radio" name="soil" value="Easy drainage soil" class="soil">Easy drainage soil</label>
   
           <p>Choose your extras:</p>
           <label><input type="checkbox" name="extras" value="moss-pole"> Moss pole</label>
           <label><input type="checkbox" name="extras" value="pebbles"> Pebbles</label>
           <label><input type="checkbox" name="extras" value="smaller-plants"> Smaller plants</label>
-      
       </form>
       </div>
     </section>
