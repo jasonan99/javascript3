@@ -35,10 +35,76 @@ button:hover {
   color: mediumslateblue;
 }
 
+button:disabled {
+  background-color: #ccc;
+  pointer-events: none;
+  border-color: #ccc;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: mediumslateblue;
   cursor: pointer;
+}
+
+select {
+  border-color: mediumslateblue;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  width: 200px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 5;
+}
+
+option {
+  padding: 10px;
+}
+
+option:hover {
+  background: mediumslateblue;
+  color: white;
+  border-radius: 5px;
+}
+
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, mediumslateblue 50%),
+    linear-gradient(135deg, mediumslateblue 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image:
+    linear-gradient(45deg, mediumslateblue 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, mediumslateblue 50%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: mediumslateblue;
+  outline: 0;
+}
+
+h3 {
+  color: black;
+  font-size: 16px;
 }
 
 .plant-form {
@@ -67,105 +133,142 @@ input[type="checkbox"] {
   display: none;
 }
 
-/* .toggle-container {
-  margin-bottom: 10px;
+.left {
+  left: 10%;
 }
 
-.switch {
+.order {
   position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 28px;
+  left: 50%;
+  width: 50%;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
+.accordion {
+  background-color: #eee;
+  color: #444;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  padding: 18px;
+  width: 50%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin: 0;
+  font-weight: bold;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
+.active, .accordion:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+.panel {
+  padding: 0 18px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.accordion:after {
+  content: '\25BC';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.active:after {
+  content: '\25B2';
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(22px);
-  -ms-transform: translateX(22px);
-  transform: translateX(22px);
+.stock {
+  width: fit-content;
 }
 
-.slider.round {
-  border-radius: 34px;
+.red-bg {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
 }
 
-.slider.round:before {
-  border-radius: 50%;
-} */
-
-/* input[type="radio"] {
-  display: none;
+.yellow-bg {
+  background-color: yellow;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
 }
 
-.label-container {
+.green-bg {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.price {
+  font-size: 32px;
+  color: black;
+}
+
+.breakdown {
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.tips {
+  font-weight: normal;
+  margin: 15px 25px;
+}
+
+.description {
+  width: 47%;
+}
+
+.light::before {
+  content: '';
+  background: url("../images/icons/light.svg") no-repeat;
+  width: 20px;
+  height: 20px;
   display: inline-block;
-  position: relative;
-  padding-left: 30px;
-  margin-right: 10px;
-  cursor: pointer;
+  margin-right: 5px;
+  background-size: 15px;
+  background-position: bottom;
 }
 
-.circle {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  height: 24px;
-  width: 24px;
-  background-color: #ccc;
-  border: 2px solid #ccc;
-  border-radius: 50%;
+.water::before {
+  content: '';
+  background: url("../images/icons/water.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  background-size: 15px;
+  background-position: bottom;
 }
 
-input[type="radio"]:checked + .circle {
-  background-color: #2196F3;
-  border-color: #2196F3;
+.humidity::before {
+  content: '';
+  background: url("../images/icons/humidity.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  background-size: 15px;
+  background-position: bottom;
 }
 
-.label-container span {
-  vertical-align: middle;
-  position: relative;
-  z-index: 1;
-  padding-left: 10px;
+.temperature::before {
+  content: '';
+  background: url("../images/icons/temperature.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  background-size: 15px;
+  background-position: bottom;
 }
-
-#pot_colors {
-  margin-top: 10px;
-} */
-

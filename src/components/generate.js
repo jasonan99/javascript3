@@ -25,7 +25,6 @@ function generateImages(data) {
   return imagesHTML;
 }
 
-
 function generateInfo(data) {
   let infoHTML = `
     <p>Name: ${data.plant}</p>
@@ -42,4 +41,13 @@ function generateInfo(data) {
   return infoHTML;
 }
 
-export {generateImages, generateInfo, formatString};
+function generateTitle(data, text) {
+  const titleHTML = `
+    <p>${text}</p>
+    <h2>${data.plant}!</h2>
+  `;
+
+  return titleHTML;
+}
+
+export {generateImages, generateInfo, generateTitle, formatString};

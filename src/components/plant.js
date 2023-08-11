@@ -1,6 +1,6 @@
 import { hide, updateCustomizeForm } from "./visualizer.js";
 import getInfo from "./form.js";
-import {generateImages, generateInfo} from "./generate.js";
+import {generateImages, generateInfo, generateTitle} from "./generate.js";
 
 const form = document.getElementById("form");
 const title = document.getElementById("title");
@@ -26,10 +26,8 @@ function showPlant() {
 
     data = getInfo(placement, sunlight, pets, watering, style, extras);
 
-    title.innerHTML = `
-      <p>The perfect plant for you is...</p>
-      <h2>${data.plant}!</h2>
-    `;
+    const titleHTML = generateTitle(data, "The perfect plant for you is...");
+    title.innerHTML = titleHTML;
 
     const imagesHTML = generateImages(data);
     image.innerHTML = imagesHTML;
@@ -38,9 +36,10 @@ function showPlant() {
     info.innerHTML = infoHTML;
 
     info.innerHTML += `<button id="customize">Customize!</button>`;
+    info.innerHTML += `<button class="hidden" id="check">Check store availability</button>`;
+    info.innerHTML += `<button class="hidden" id="back">Back to customization</button>`;
 
     hide();
-
     updateCustomizeForm();
   });
 }

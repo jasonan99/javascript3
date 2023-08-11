@@ -38,15 +38,15 @@
           <label><input type="radio" name="style" value="decoration" required /> I like a lot of decoration and bright colors</label>
 
           <p>Do you want to add any extra elements to your plant?</p>
-          <label><input type="checkbox" name="extras" value="moss-pole" /> Moss pole</label>
+          <label><input type="checkbox" name="extras" value="mosspole" /> Moss pole</label>
           <label><input type="checkbox" name="extras" value="pebbles" /> Pebbles</label>
-          <label><input type="checkbox" name="extras" value="smaller-plants" /> Smaller plants</label>
+          <label><input type="checkbox" name="extras" value="smallerplants" /> Smaller plants</label>
 
           <button id="get-plant">Get your plant!</button>
           <button type="reset">Clear</button>
         </form>
       </div>
-      <div class="card">
+      <div class="card" id="card">
         <div id="title"></div>
         <div id="image"></div>
         <div class="info" id="info"></div>
@@ -65,8 +65,8 @@
           <label><input type="radio" name="pot" value="pot" class="pot">No</label>
   
           <p>Pot color:</p>
-          <label><input type="checkbox" name="color" value="Yes">Yes</label>
-          <label><input type="checkbox" name="color" value="Unpainted" class="color">No</label>
+          <!-- <label><input type="radio" name="color" value="Yes" id="yes-radio">Yes</label> -->
+          <label><input type="radio" name="color" value="Unpainted" id="no-radio" class="color">No</label>
   
           <div>
               <label><input type="radio" name="color" value="Blue" class="color">Blue</label>
@@ -76,8 +76,7 @@
           </div>
   
           <p>Choose your plant:</p>
-          <select name="plant" data-key="plant">
-            <option value=""></option>
+          <select name="plant" data-key="plant" class="minimal" onfocus="this.size=7;" onblur="this.size=0;" onchange="this.size=1; this.blur()">
             <option value="Aglaonema">Aglaonema Silver Bay</option>
             <option value="Aloe Vera">Aloe Vera</option>
             <option value="Boston Fern">Boston Fern</option>
@@ -93,10 +92,34 @@
           <label><input type="radio" name="soil" value="Easy drainage soil" class="soil">Easy drainage soil</label>
   
           <p>Choose your extras:</p>
-          <label><input type="checkbox" name="extras" value="moss-pole"> Moss pole</label>
+          <label><input type="checkbox" name="extras" value="mosspole"> Moss pole</label>
           <label><input type="checkbox" name="extras" value="pebbles"> Pebbles</label>
-          <label><input type="checkbox" name="extras" value="smaller-plants"> Smaller plants</label>
+          <label><input type="checkbox" name="extras" value="smallerplants"> Smaller plants</label>
       </form>
+      </div>
+    </section>
+    <section class="order hidden" id="order">
+      <h2>Plant with custom pot and special soil</h2>
+      <p class="price hidden" id="price"></p>
+      <div class="stock" id="stock"></div>
+      <button id="order-button">Order now!</button>
+      <div id="accordion">
+        <button id="accordion-container" class="accordion hidden">Price breakdown</button>
+        <div class="panel">
+          <div id="breakdown"></div>
+        </div>
+        <button class="accordion">Inventory alerts</button>
+        <div class="panel">
+          <div class="stock" id="alerts"></div>
+        </div>
+        <button id="accordion-container" class="accordion hidden">Plant description</button>
+        <div class="panel">
+          <div class="description" id="description"></div>
+        </div>
+        <button id="accordion-container" class="accordion hidden">Caring tips</button>
+        <div class="panel">
+          <div class="description" id="tips"></div>
+        </div>
       </div>
     </section>
   </main>

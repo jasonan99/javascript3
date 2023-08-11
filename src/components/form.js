@@ -1,7 +1,5 @@
-// form.js
-
 import builder from "./builder.js";
-import plants from "../data.js";
+import { plants } from "../data.js";
 
 const data = {};
 
@@ -54,14 +52,14 @@ function getInfo(placement, sunlight, pets, watering, style, extras) {
   
   data.extras = extras;
 
-  if (extras.includes("moss-pole")) {
+  if (extras.includes("mosspole")) {
     plantBuilder.withPole("Moss pole");
   }
   if (extras.includes("pebbles")) {
     plantBuilder.withPebbles("Pebbles");
   }
-  if (extras.includes("smaller-plants")) {
-    plantBuilder.withPlants("Mini Plants");
+  if (extras.includes("smallerplants")) {
+    plantBuilder.withPlants("Mini plants");
   }
 
   if (plantBuilder.includePole) {

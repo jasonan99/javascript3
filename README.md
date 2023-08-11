@@ -8,11 +8,15 @@ Follow these steps to run the project using Vite:
 
 3. **Install dependencies**: Run the following command to install the project dependencies:
 
-`npm install`
+```
+npm install
+```
 
 4. **Run the project**: Once the dependencies are successfully installed, execute the following command to start the application:
 
-`npm run dev`
+```
+npm run dev
+```
 
 This will start the Vite development server, and your project will be available.
 

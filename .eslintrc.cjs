@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  ignorePatterns: ["dist/"],
+  ignorePatterns: ["dist/", "form.test.js"],
   rules: {
     "import/extensions": [2, "always"],
     "import/no-mutable-exports": ["off"],
